@@ -27,7 +27,7 @@ namespace CustomerInquiryWebAPI.Controllers
         {
             if (customerId == null && string.IsNullOrWhiteSpace(customerEmail))
             {
-                return BadRequest();
+                return BadRequest("No inquiry criteria");
             }
 
             if (!ModelState.IsValid)
@@ -41,14 +41,14 @@ namespace CustomerInquiryWebAPI.Controllers
                 var result = await _customerService.CustomersByIdOrEmailId(customerId, customerEmail);
                 if (result == null)
                 {
-                    return NotFound();
+                    return NotFound("Not Found!");
                 }
                 return Ok(result);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e);
-                throw;
+
+                return BadRequest();
             }
         }
     }

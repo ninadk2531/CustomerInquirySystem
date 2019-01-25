@@ -44,7 +44,8 @@ namespace CustomerInquiry.Service
                 customers = customerByCustomerId;
             }
 
-
+            if (customers == null)
+                return null;
             var customerTransactionIds =
                 await _customerTransactionRepository.RetrieveTransactionsByTransactionIds(customers.CustomerId);
 

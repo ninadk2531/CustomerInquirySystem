@@ -55,11 +55,13 @@ namespace CustomerInquiryWebAPI
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<ICustomerTransactionRepository, CustomerTransactionRepository>();
 
+           
+
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -85,9 +87,13 @@ namespace CustomerInquiryWebAPI
 
             AutoMapper.Mapper.Initialize(mapper =>
             {
-                mapper.CreateMap<Customers, CustomerDto>().ReverseMap();
-                mapper.CreateMap<Transactions, TransactionDto>().ReverseMap();
+                mapper.CreateMap<Customers, CustomerDto>();
+                mapper.CreateMap<CustomerDto, Customers>();
+                mapper.CreateMap<Transactions, TransactionDto>();
+                mapper.CreateMap<TransactionDto, Transactions>();
             });
+
+            loggerFactory.AddApplicationInsights(app.ApplicationServices, LogLevel.Warning);
         }
     }
 }
