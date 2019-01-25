@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerInquiry.Common\CustomerInquiry.Common.csproj" />
+    <ProjectReference Include="..\CustomerInquriy.Model\CustomerInquiry.Model.csproj" />
+    <ProjectReference Include="..\CustomerInquriy.Repository\CustomerInquiry.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
