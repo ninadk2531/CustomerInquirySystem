@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CustomerInquriy.Service
+namespace CustomerInquiry.Service
 {
     public class Class1
     {

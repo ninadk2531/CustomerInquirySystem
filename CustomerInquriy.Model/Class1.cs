@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CustomerInquriy.Model
+namespace CustomerInquiry.Model
 {
     public class Class1
     {

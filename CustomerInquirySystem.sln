@@ -7,13 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiryWebAPI", "Cu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.Common", "CustomerInquiry.Common\CustomerInquiry.Common.csproj", "{068E17AC-8290-4074-82A9-78F3135035CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquriy.DAL", "CustomerInquriy.DAL\CustomerInquriy.DAL.csproj", "{176A47F0-6585-4077-B2CF-99E273F9B3A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.DAL", "CustomerInquriy.DAL\CustomerInquiry.DAL.csproj", "{176A47F0-6585-4077-B2CF-99E273F9B3A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquriy.Model", "CustomerInquriy.Model\CustomerInquriy.Model.csproj", "{EA99B15B-66B3-4CE5-8E78-44C6CD9C637E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.Model", "CustomerInquriy.Model\CustomerInquiry.Model.csproj", "{EA99B15B-66B3-4CE5-8E78-44C6CD9C637E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquriy.Service", "CustomerInquriy.Service\CustomerInquriy.Service.csproj", "{76B1161E-C35D-4971-B2C3-1F6DE0209994}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.Service", "CustomerInquriy.Service\CustomerInquiry.Service.csproj", "{76B1161E-C35D-4971-B2C3-1F6DE0209994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquriy.Repository", "CustomerInquriy.Repository\CustomerInquriy.Repository.csproj", "{0ED12EF2-D950-470C-88A3-96E89535AF8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.Repository", "CustomerInquriy.Repository\CustomerInquiry.Repository.csproj", "{0ED12EF2-D950-470C-88A3-96E89535AF8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

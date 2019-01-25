@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CustomerInquriy.Repository
+namespace CustomerInquiry.Repository
 {
     public class Class1
     {

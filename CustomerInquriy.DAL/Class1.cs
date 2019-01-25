@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CustomerInquriy.DAL
+namespace CustomerInquiry.DAL
 {
     public class Class1
     {
