@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using CustomerInquiry.DAL.Entities;
+using CustomerInquiry.Model;
 using CustomerInquiry.Repository;
 using CustomerInquiry.Repository.Interfaces;
+using CustomerInquiry.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,6 +17,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.Versioning;
 
 namespace CustomerInquiryWebAPI
 {
@@ -37,9 +42,20 @@ namespace CustomerInquiryWebAPI
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });
+            services.AddApiVersioning(config =>
+            {
+                config.ReportApiVersions = true;
+                config.AssumeDefaultVersionWhenUnspecified = true;
+                config.DefaultApiVersion = new ApiVersion(1, 0);
+                config.ApiVersionReader = new HeaderApiVersionReader("api-version");
+            });
 
-            services.AddTransient<ICustomerRepository, CustomerRepository>();
-            services.AddTransient<ITransactionRepository, TransactionRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ITransactionRepository, TransactionRepository>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<ICustomerTransactionRepository, CustomerTransactionRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +82,12 @@ namespace CustomerInquiryWebAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            AutoMapper.Mapper.Initialize(mapper =>
+            {
+                mapper.CreateMap<Customers, CustomerDto>().ReverseMap();
+                mapper.CreateMap<Transactions, TransactionDto>().ReverseMap();
+            });
         }
     }
 }

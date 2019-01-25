@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace CustomerInquiry.Repository
 {
-    public class TransactionRepository : ITransactionRepository
+    public class CustomerTransactionRepository : ICustomerTransactionRepository
     {
-        public async Task<List<Transactions>> RetrieveTransactionsByTransactionIds(List<int> transactionIds)
+        public async Task<List<CustomerTransaction>> RetrieveTransactionsByTransactionIds(int customerId)
         {
             using (var db = new CustomerDbContext())
             {
-                return await db.Transactions.Where(x => transactionIds.Contains(x.TransactionId)).ToListAsync();
+                return await db.CustomerTransaction.Where(x => x.CustomerId == customerId).ToListAsync();
 
             }
         }

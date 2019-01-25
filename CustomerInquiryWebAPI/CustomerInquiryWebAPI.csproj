@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <StartupObject>CustomerInquiryWebAPI.Program</StartupObject>
     <UserSecretsId>64a65947-f07d-4e3c-843a-ea7bbf997fd8</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/5baa3ee7-f4ca-4a5a-bacb-22592d4ecdea/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/CustomerInquiryWebAPI</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/5baa3ee7-f4ca-4a5a-bacb-22592d4ecdea/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/CustomerInquiryWebAPI</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +14,9 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="2.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
@@ -20,6 +24,10 @@
   <ItemGroup>
     <ProjectReference Include="..\CustomerInquiry.Common\CustomerInquiry.Common.csproj" />
     <ProjectReference Include="..\CustomerInquriy.Service\CustomerInquiry.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>

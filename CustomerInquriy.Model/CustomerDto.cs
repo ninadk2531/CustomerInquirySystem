@@ -9,7 +9,7 @@ namespace CustomerInquiry.Model
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string ContactEmail { get; set; }
-        public string MobileNo { get; set; }
+        public decimal ? MobileNo { get; set; }
 
         public List<TransactionDto> Transactions = new List<TransactionDto>();
 

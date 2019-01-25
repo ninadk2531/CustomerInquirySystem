@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CustomerInquiryWebAPI.Controllers
 {
+    [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
@@ -34,9 +35,15 @@ namespace CustomerInquiryWebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
+
             try
             {
-                return await _customerService.CustomersByIdOrEmailId(customerId, customerEmail);
+                var result = await _customerService.CustomersByIdOrEmailId(customerId, customerEmail);
+                if (result == null)
+                {
+                    return NotFound();
+                }
+                return Ok(result);
             }
             catch (Exception e)
             {

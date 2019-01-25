@@ -13,7 +13,7 @@ namespace CustomerInquiry.Repository
     {
         public  async Task<Customers> RetrieveCustomersByCustomerId(int customerId)
         {
-            using (CustomerDbContext db = new CustomerDbContext())
+            using (var db = new CustomerDbContext())
             {
                 return await db.Customers.FirstOrDefaultAsync(x => x.CustomerId == customerId);
                 
@@ -22,7 +22,7 @@ namespace CustomerInquiry.Repository
 
         public async Task<Customers> RetrieveCustomersByCustomerEmail(string customerEmail)
         {
-            using (CustomerDbContext db = new CustomerDbContext())
+            using (var db = new CustomerDbContext())
             {
                 return await db.Customers.FirstOrDefaultAsync(x => x.ContactEmail == customerEmail);
             }
