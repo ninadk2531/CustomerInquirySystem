@@ -6,6 +6,6 @@ namespace CustomerInquiry.Service
 {
     public interface ICustomerService
     {
-        Task<List<CustomerDto>> CustomersByIdOrEmailId(int? customerId, string customerEmail);
+        Task<CustomerDto> CustomersByIdOrEmailId(int? customerId, string customerEmail);
     }
 }

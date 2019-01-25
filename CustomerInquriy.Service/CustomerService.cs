@@ -20,7 +20,7 @@ namespace CustomerInquiry.Service
             _transactionRepository = transactionRepository;
         }
 
-        public async Task<List<CustomerDto>> CustomersByIdOrEmailId(int? customerId, string customerEmail)
+        public async Task<CustomerDto> CustomersByIdOrEmailId(int? customerId, string customerEmail)
         {
             
             if (customerId != null && customerId != 0)
@@ -33,12 +33,12 @@ namespace CustomerInquiry.Service
 
 
                 //Create Dto using both the data source.
-                return new List<CustomerDto>();
+                return new CustomerDto();
 
 
             }
 
-            return new List<CustomerDto>();
+            return new CustomerDto();
         }
     }
 }
