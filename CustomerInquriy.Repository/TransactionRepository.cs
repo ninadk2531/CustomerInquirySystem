@@ -9,8 +9,17 @@ using System.Threading.Tasks;
 
 namespace CustomerInquiry.Repository
 {
+    /// <summary>
+    /// TransactionRepository class
+    /// </summary>
+    /// <seealso cref="CustomerInquiry.Repository.Interfaces.ITransactionRepository" />
     public class TransactionRepository : ITransactionRepository
     {
+        /// <summary>
+        /// Retrieves the transactions by transaction ids.
+        /// </summary>
+        /// <param name="transactionIds">The transaction ids.</param>
+        /// <returns></returns>
         public async Task<List<Transactions>> RetrieveTransactionsByTransactionIds(List<int> transactionIds)
         {
             using (var db = new CustomerDbContext())

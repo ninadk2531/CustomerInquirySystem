@@ -11,12 +11,31 @@ using CustomerInquiry.Repository.Interfaces;
 
 namespace CustomerInquiry.Service
 {
+    /// <summary>
+    /// Customer service class
+    /// </summary>
+    /// <seealso cref="CustomerInquiry.Service.ICustomerService" />
     public class CustomerService : ICustomerService
     {
+        /// <summary>
+        /// The customer repository
+        /// </summary>
         private readonly ICustomerRepository _customerRepository;
+        /// <summary>
+        /// The transaction repository
+        /// </summary>
         private readonly ITransactionRepository _transactionRepository;
+        /// <summary>
+        /// The customer transaction repository
+        /// </summary>
         private readonly ICustomerTransactionRepository _customerTransactionRepository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerService"/> class.
+        /// </summary>
+        /// <param name="customerRepository">The customer repository.</param>
+        /// <param name="transactionRepository">The transaction repository.</param>
+        /// <param name="customerTransactionRepository">The customer transaction repository.</param>
         public CustomerService(ICustomerRepository customerRepository, ITransactionRepository transactionRepository, ICustomerTransactionRepository customerTransactionRepository)
         {
             _customerRepository = customerRepository;
@@ -24,6 +43,12 @@ namespace CustomerInquiry.Service
             _customerTransactionRepository = customerTransactionRepository;
         }
 
+        /// <summary>
+        /// Customerses the by identifier or email identifier.
+        /// </summary>
+        /// <param name="customerId">The customer identifier.</param>
+        /// <param name="customerEmail">The customer email.</param>
+        /// <returns></returns>
         public async Task<CustomerDto> CustomersByIdOrEmailId(int? customerId, string customerEmail)
         {
             var customerDto = new CustomerDto();
