@@ -6,6 +6,7 @@ using CustomerInquiry.DAL.Entities;
 using CustomerInquiry.Model;
 using CustomerInquiry.Repository.Interfaces;
 using CustomerInquiry.Service;
+using CustomerInquiryWebAPI.Controllers;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -38,12 +39,14 @@ namespace CustomerInquiryUnitTestCase
         [TestMethod]
         public void GetCustomerDetailsUnitTest()
         {
+            
             var currentDate = DateTime.Now;
             var mockCustomerRepository = new Mock<ICustomerRepository>();
             var mockCustomerTransactionRepository = new Mock<ICustomerTransactionRepository>();
             var mockTransactionRepository = new Mock<ITransactionRepository>();
             var mockCustomerService = new Mock<ICustomerService>();
-           
+
+
             var customerDto = new CustomerDto()
             {
                 ContactEmail = "abc@xyz.com",
@@ -53,7 +56,8 @@ namespace CustomerInquiryUnitTestCase
                 Transactions = new List<TransactionDto>()
 
             };
-            customerDto.Transactions.Add(new TransactionDto() {
+            customerDto.Transactions.Add(new TransactionDto()
+            {
                 Amount = "500.00",
                 TransactionId = 1,
                 TransactionDate = currentDate.ToString("dd/MM/YY HH:MM"),
@@ -87,6 +91,10 @@ namespace CustomerInquiryUnitTestCase
                 Status = (int)Status.Canceled,
                 CurrencyCode = "INR"
             });
+
+            CustomerController controller = new CustomerController(mockCustomerService.Object);
+
+           
 
             mockCustomerService.Setup(p => p.CustomersByIdOrEmailId(It.IsAny<int>(), string.Empty)).ReturnsAsync(customerDto);
             mockCustomerRepository.Setup(p => p.RetrieveCustomersByCustomerEmail(It.IsAny<string>())).ReturnsAsync(customerEntitiy);

@@ -14,7 +14,7 @@ namespace CustomerInquiryWebAPI.Controllers
     /// </summary>
     /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
     [ApiVersion("1.0")]
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]/[action]")]
     [ApiController]
     
     public class CustomerController : ControllerBase
@@ -41,6 +41,7 @@ namespace CustomerInquiryWebAPI.Controllers
         /// <param name="customerEmail">The customer email.</param>
         /// <returns></returns>
         [HttpGet]
+        [ActionName("GetCustomerDetails")]
         //[ValidateAntiForgeryToken]
         public async Task<ActionResult<CustomerDto>> GetCustomerDetails(int ? customerId, string customerEmail)
         {
