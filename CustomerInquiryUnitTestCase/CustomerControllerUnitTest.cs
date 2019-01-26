@@ -6,7 +6,7 @@ using CustomerInquiry.DAL.Entities;
 using CustomerInquiry.Model;
 using CustomerInquiry.Repository.Interfaces;
 using CustomerInquiry.Service;
-using CustomerInquiryWebAPI.Controllers;
+
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -14,7 +14,7 @@ using Moq;
 namespace CustomerInquiryUnitTestCase
 {
     /// <summary>
-    /// Unit Test Case for Customer Controlller class
+    /// Unit Test Case for Customer class
     /// </summary>
     [TestClass]
     public class CustomerControllerTest
@@ -33,6 +33,7 @@ namespace CustomerInquiryUnitTestCase
             _controller = new CustomerControllerTest();
         }
 
+        
         /// <summary>
         /// Gets the customer details unit test.
         /// </summary>
@@ -92,9 +93,8 @@ namespace CustomerInquiryUnitTestCase
                 CurrencyCode = "INR"
             });
 
-            CustomerController controller = new CustomerController(mockCustomerService.Object);
 
-           
+            
 
             mockCustomerService.Setup(p => p.CustomersByIdOrEmailId(It.IsAny<int>(), string.Empty)).ReturnsAsync(customerDto);
             mockCustomerRepository.Setup(p => p.RetrieveCustomersByCustomerEmail(It.IsAny<string>())).ReturnsAsync(customerEntitiy);
@@ -102,6 +102,8 @@ namespace CustomerInquiryUnitTestCase
             mockTransactionRepository.Setup(p => p.RetrieveTransactionsByTransactionIds(It.IsAny<List<int>>()))
                 .ReturnsAsync(transactionList);
 
+            //CustomerController _customerController = new CustomerController(mockCustomerService.Object);
+            //_customerController.GetCustomerDetails(It.IsAny<int>(), It.IsAny<string>());
 
             Assert.AreEqual(customerDto.CustomerId, customerEntitiy.CustomerId);
         }

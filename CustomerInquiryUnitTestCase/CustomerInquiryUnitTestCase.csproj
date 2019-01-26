@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CustomerInquiryWebAPI\CustomerInquiryWebAPI.csproj" />
-    <ProjectReference Include="..\CustomerInquriy.Service\CustomerInquiry.Service.csproj" />
   </ItemGroup>
 
 </Project>
