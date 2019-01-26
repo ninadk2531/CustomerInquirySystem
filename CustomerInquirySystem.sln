@@ -3,22 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiryWebAPI", "CustomerInquiryWebAPI\CustomerInquiryWebAPI.csproj", "{181C65DE-170F-4110-80EF-119FE4A21CBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerInquiryWebAPI", "CustomerInquiryWebAPI\CustomerInquiryWebAPI.csproj", "{181C65DE-170F-4110-80EF-119FE4A21CBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.Common", "CustomerInquiry.Common\CustomerInquiry.Common.csproj", "{068E17AC-8290-4074-82A9-78F3135035CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerInquiry.Common", "CustomerInquiry.Common\CustomerInquiry.Common.csproj", "{068E17AC-8290-4074-82A9-78F3135035CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.DAL", "CustomerInquriy.DAL\CustomerInquiry.DAL.csproj", "{176A47F0-6585-4077-B2CF-99E273F9B3A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerInquiry.DAL", "CustomerInquriy.DAL\CustomerInquiry.DAL.csproj", "{176A47F0-6585-4077-B2CF-99E273F9B3A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.Model", "CustomerInquriy.Model\CustomerInquiry.Model.csproj", "{EA99B15B-66B3-4CE5-8E78-44C6CD9C637E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerInquiry.Model", "CustomerInquriy.Model\CustomerInquiry.Model.csproj", "{EA99B15B-66B3-4CE5-8E78-44C6CD9C637E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.Service", "CustomerInquriy.Service\CustomerInquiry.Service.csproj", "{76B1161E-C35D-4971-B2C3-1F6DE0209994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerInquiry.Service", "CustomerInquriy.Service\CustomerInquiry.Service.csproj", "{76B1161E-C35D-4971-B2C3-1F6DE0209994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInquiry.Repository", "CustomerInquriy.Repository\CustomerInquiry.Repository.csproj", "{0ED12EF2-D950-470C-88A3-96E89535AF8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerInquiry.Repository", "CustomerInquriy.Repository\CustomerInquiry.Repository.csproj", "{0ED12EF2-D950-470C-88A3-96E89535AF8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1219815A-6F4C-41E3-8826-0120D85B1A7C}"
 	ProjectSection(SolutionItems) = preProject
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestForCustomerInquiry", "XUnitTestForCustomerInquiry\XUnitTestForCustomerInquiry.csproj", "{C3C9A8A9-1761-447B-96D8-FD9CCC6782B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{0ED12EF2-D950-470C-88A3-96E89535AF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ED12EF2-D950-470C-88A3-96E89535AF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ED12EF2-D950-470C-88A3-96E89535AF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C9A8A9-1761-447B-96D8-FD9CCC6782B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C9A8A9-1761-447B-96D8-FD9CCC6782B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C9A8A9-1761-447B-96D8-FD9CCC6782B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C9A8A9-1761-447B-96D8-FD9CCC6782B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

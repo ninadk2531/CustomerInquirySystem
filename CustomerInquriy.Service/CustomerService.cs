@@ -66,8 +66,8 @@ namespace CustomerInquiry.Service
                 foreach (var itemTransactions in transactionIdsOfCustomer)
                 {
                     customerDto.Transactions.Add(new TransactionDto() {TransactionId = itemTransactions.TransactionId,
-                        TransactionDate = itemTransactions.TransactionDate,
-                        Amount = itemTransactions.Amount,
+                        TransactionDate = itemTransactions.TransactionDate.Value.ToString("dd/MM/YY HH:MM"),
+                        Amount = Decimal.Round(itemTransactions.Amount.Value,2).ToString(),
                         CurrencyCode =  itemTransactions.CurrencyCode,
                         Status = itemTransactions.Status == (int)Status.Success ? Status.Success.ToString() : itemTransactions.Status == (int)Status.Failed ? Status.Failed.ToString() : Status.Canceled.ToString()
 
