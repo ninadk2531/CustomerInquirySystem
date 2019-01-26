@@ -88,10 +88,14 @@ namespace CustomerInquiry.Service
             {
                 
                 
-                foreach (var itemTransactions in transactionIdsOfCustomer)
+                foreach (var itemTransactions in transactionIdsOfCustomer.OrderByDescending(x=>x.TransactionDate))
                 {
+                    if (customerDto.Transactions.Count == 5)
+                        return customerDto;
+
+
                     customerDto.Transactions.Add(new TransactionDto() {TransactionId = itemTransactions.TransactionId,
-                        TransactionDate = itemTransactions.TransactionDate.Value.ToString("dd/MM/YY HH:MM"),
+                        TransactionDate = itemTransactions.TransactionDate.Value.ToString("dd/MM/yy HH:MM"),
                         Amount = Decimal.Round(itemTransactions.Amount.Value,2).ToString(),
                         CurrencyCode =  itemTransactions.CurrencyCode,
                         Status = itemTransactions.Status == (int)Status.Success ? Status.Success.ToString() : itemTransactions.Status == (int)Status.Failed ? Status.Failed.ToString() : Status.Canceled.ToString()

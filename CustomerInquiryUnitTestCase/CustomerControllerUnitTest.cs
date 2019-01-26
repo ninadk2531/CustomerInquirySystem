@@ -61,7 +61,7 @@ namespace CustomerInquiryUnitTestCase
             {
                 Amount = "500.00",
                 TransactionId = 1,
-                TransactionDate = currentDate.ToString("dd/MM/YY HH:MM"),
+                TransactionDate = currentDate.ToString("dd/MM/yy HH:MM"),
                 Status = Status.Canceled.ToString(),
                 CurrencyCode = "INR"
             });

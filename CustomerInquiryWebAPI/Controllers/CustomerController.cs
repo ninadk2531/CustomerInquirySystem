@@ -63,7 +63,7 @@ namespace CustomerInquiryWebAPI.Controllers
                 {
                     return NotFound("Not Found!");
                 }
-                return Ok(result);
+                return Ok(result.Transactions.OrderByDescending(x=>x.TransactionId));
             }
             catch (Exception)
             {
